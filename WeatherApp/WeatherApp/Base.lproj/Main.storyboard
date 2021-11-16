@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lpq-aF-0Jm">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TempConverter-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="EOK-Ge-2Xr">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp Coverter from °C to °F, °K" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-y5-zl0">
+                                <rect key="frame" x="54.333333333333343" y="150" width="319.33333333333326" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="I8a-Pd-SS0"/>
+                                    <constraint firstAttribute="height" constant="80" id="p2U-Kv-T4T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pb-sr-MAV">
+                                <rect key="frame" x="193.66666666666666" y="250" width="41" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NyX-zT-4MD">
+                                <rect key="frame" x="79" y="841" width="270" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="hdt-in-Ib1"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Fahrenheit"/>
+                                    <segment title="Kelvin"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="mGy-p8-Dh4"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DOL-hG-nNd">
+                                <rect key="frame" x="64" y="304" width="300" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dgh-Im-U66">
+                                        <rect key="frame" x="0.0" y="0.99999999999999822" width="19.333333333333332" height="28.333333333333336"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="GA2-qV-GMz">
+                                        <rect key="frame" x="22.333333333333329" y="0.0" width="255.33333333333337" height="31"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" systemColor="systemRedColor"/>
+                                        <connections>
+                                            <action selector="tempConverter:" destination="BYZ-38-t0r" eventType="valueChanged" id="gda-G0-HCW"/>
+                                        </connections>
+                                    </slider>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aFW-Of-zGY">
+                                        <rect key="frame" x="280.66666666666669" y="0.99999999999999822" width="19.333333333333314" height="28.333333333333336"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="nc6-Y0-KKN"/>
+                                    <constraint firstAttribute="height" constant="30" id="pvw-QF-uQX"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 °F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuS-yf-U68">
+                                <rect key="frame" x="188.66666666666666" y="364" width="50.666666666666657" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NyX-zT-4MD" secondAttribute="bottom" constant="20" id="HDZ-3g-KiS"/>
+                            <constraint firstItem="j1b-y5-zl0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ize-yx-Ms6"/>
+                            <constraint firstItem="5pb-sr-MAV" firstAttribute="top" secondItem="j1b-y5-zl0" secondAttribute="bottom" constant="20" id="Jax-XH-oJc"/>
+                            <constraint firstItem="NyX-zT-4MD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LCg-xT-90j"/>
+                            <constraint firstItem="WuS-yf-U68" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N50-lh-PsX"/>
+                            <constraint firstItem="j1b-y5-zl0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SS9-ha-OMy"/>
+                            <constraint firstAttribute="bottom" secondItem="EOK-Ge-2Xr" secondAttribute="bottom" id="UtC-gC-CsN"/>
+                            <constraint firstItem="EOK-Ge-2Xr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VL9-No-qJK"/>
+                            <constraint firstItem="EOK-Ge-2Xr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ctt-1u-qeX"/>
+                            <constraint firstItem="5pb-sr-MAV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWt-mI-YRW"/>
+                            <constraint firstItem="EOK-Ge-2Xr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iuU-zd-axN"/>
+                            <constraint firstItem="WuS-yf-U68" firstAttribute="top" secondItem="DOL-hG-nNd" secondAttribute="bottom" constant="30" id="jUR-Ku-D9Q"/>
+                            <constraint firstItem="DOL-hG-nNd" firstAttribute="centerX" secondItem="5pb-sr-MAV" secondAttribute="centerX" id="nZ8-4R-Ewo"/>
+                            <constraint firstItem="j1b-y5-zl0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pWY-rv-v5v"/>
+                            <constraint firstItem="DOL-hG-nNd" firstAttribute="top" secondItem="5pb-sr-MAV" secondAttribute="bottom" constant="30" id="us8-G9-cRO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TempConverter" id="MSm-D5-TVJ"/>
+                    <connections>
+                        <outlet property="currentTemp" destination="5pb-sr-MAV" id="7if-qv-uQd"/>
+                        <outlet property="newTemp" destination="WuS-yf-U68" id="Iaw-vY-NzD"/>
+                        <outlet property="segmentedControlOutlet" destination="NyX-zT-4MD" id="mMh-zr-qGz"/>
+                        <outlet property="slider" destination="GA2-qV-GMz" id="7XE-tQ-CMf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.28971962616822" y="68.682505399568043"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rgw-hQ-7JM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lpq-aF-0Jm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tAl-PL-ZU1">
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ujo-5C-YnO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxQ-mt-EJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="dTe-aJ-kpU">
+                    <rect key="frame" x="0.0" y="-1" width="169" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="Fahrenheit"/>
+                        <segment title="Kelvin"/>
+                    </segments>
+                    <color key="selectedSegmentTintColor" systemColor="systemRedColor"/>
+                </segmentedControl>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="69.715142428785612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="day" width="2410" height="5218"/>
+        <image name="sun.min" catalog="system" width="128" height="121"/>
+        <image name="sun.min.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
